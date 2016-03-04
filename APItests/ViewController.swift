@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        BarcodeService.sharedInstance.getByUPC("071921008291", onSuccess: {
+            (result) in print(result)
+            }, onError:  {})
     }
 
     override func didReceiveMemoryWarning() {

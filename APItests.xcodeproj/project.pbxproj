@@ -12,9 +12,14 @@
 		99959F141C86C3F60005157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99959F121C86C3F60005157B /* Main.storyboard */; };
 		99959F161C86C3F60005157B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99959F151C86C3F60005157B /* Assets.xcassets */; };
 		99959F191C86C3F60005157B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99959F171C86C3F60005157B /* LaunchScreen.storyboard */; };
+		99959F211C86C6390005157B /* BarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99959F201C86C6390005157B /* BarcodeService.swift */; };
+		99959F231C86CF7F0005157B /* BarcodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99959F221C86CF7F0005157B /* BarcodeResult.swift */; };
+		E84809A764D6E068FD264F21 /* Pods_APItests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BECAECFE4F94F287E24070 /* Pods_APItests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		158D2B5DA07D7E7D8BA3B73C /* Pods-APItests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APItests.release.xcconfig"; path = "Pods/Target Support Files/Pods-APItests/Pods-APItests.release.xcconfig"; sourceTree = "<group>"; };
+		89BECAECFE4F94F287E24070 /* Pods_APItests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APItests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99959F0B1C86C3F60005157B /* APItests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APItests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99959F0E1C86C3F60005157B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99959F101C86C3F60005157B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		99959F151C86C3F60005157B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99959F181C86C3F60005157B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99959F1A1C86C3F60005157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99959F201C86C6390005157B /* BarcodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeService.swift; sourceTree = "<group>"; };
+		99959F221C86CF7F0005157B /* BarcodeResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeResult.swift; sourceTree = "<group>"; };
+		EC39A0D763FFB28DE30A0941 /* Pods-APItests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APItests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APItests/Pods-APItests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84809A764D6E068FD264F21 /* Pods_APItests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09C57477CE5DCE8B4D784BC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC39A0D763FFB28DE30A0941 /* Pods-APItests.debug.xcconfig */,
+				158D2B5DA07D7E7D8BA3B73C /* Pods-APItests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		52349520DAAB9B3AE66DD2E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89BECAECFE4F94F287E24070 /* Pods_APItests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		99959F021C86C3F60005157B = {
 			isa = PBXGroup;
 			children = (
 				99959F0D1C86C3F60005157B /* APItests */,
 				99959F0C1C86C3F60005157B /* Products */,
+				09C57477CE5DCE8B4D784BC7 /* Pods */,
+				52349520DAAB9B3AE66DD2E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +88,8 @@
 				99959F151C86C3F60005157B /* Assets.xcassets */,
 				99959F171C86C3F60005157B /* LaunchScreen.storyboard */,
 				99959F1A1C86C3F60005157B /* Info.plist */,
+				99959F201C86C6390005157B /* BarcodeService.swift */,
+				99959F221C86CF7F0005157B /* BarcodeResult.swift */,
 			);
 			path = APItests;
 			sourceTree = "<group>";
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99959F1D1C86C3F60005157B /* Build configuration list for PBXNativeTarget "APItests" */;
 			buildPhases = (
+				593765405C70FB53C5E4290D /* Check Pods Manifest.lock */,
 				99959F071C86C3F60005157B /* Sources */,
 				99959F081C86C3F60005157B /* Frameworks */,
 				99959F091C86C3F60005157B /* Resources */,
+				85E526ECA16BDF176A5857D7 /* Embed Pods Frameworks */,
+				34FFA712D250F052D8C76FE0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +164,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34FFA712D250F052D8C76FE0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APItests/Pods-APItests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		593765405C70FB53C5E4290D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		85E526ECA16BDF176A5857D7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APItests/Pods-APItests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99959F071C86C3F60005157B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				99959F111C86C3F60005157B /* ViewController.swift in Sources */,
+				99959F231C86CF7F0005157B /* BarcodeResult.swift in Sources */,
+				99959F211C86C6390005157B /* BarcodeService.swift in Sources */,
 				99959F0F1C86C3F60005157B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +329,7 @@
 		};
 		99959F1E1C86C3F60005157B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC39A0D763FFB28DE30A0941 /* Pods-APItests.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = APItests/Info.plist;
@@ -257,6 +341,7 @@
 		};
 		99959F1F1C86C3F60005157B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 158D2B5DA07D7E7D8BA3B73C /* Pods-APItests.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = APItests/Info.plist;
@@ -285,6 +370,7 @@
 				99959F1F1C86C3F60005157B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
