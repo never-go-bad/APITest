@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import CloudSight
+import UIImage_Categories
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CloudSightQueryDelegate {
     @IBOutlet weak var pictureImageView: UIImageView!
-
+    @IBOutlet weak var infoText: UILabel!
+    var query: CloudSightQuery?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +23,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }, onError:  {})
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        
+        CloudSightConnection.sharedInstance().consumerKey = "zyLoq-b0FIdsivIIm8MtHg"
+        CloudSightConnection.sharedInstance().consumerSecret = "aH4RFQLr5gqfcOQuKxtNhA"
         
     }
 
@@ -57,8 +65,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
         pictureImageView.image = image
-            picker.dismissViewControllerAnimated(true, completion:nil)
+        sendToCloudSight(image)
+        picker.dismissViewControllerAnimated(true, completion:nil)
+    }
+    
+    
+    func sendToCloudSight(image:UIImage) {
+        let resizedImage = image.resizedImageWithContentMode(.ScaleAspectFill, bounds: CGSizeMake(1024, 1024), interpolationQuality: .Default)
+        let data = UIImageJPEGRepresentation(resizedImage, 0.7)
+        query = CloudSightQuery(image: data, atLocation: CGPointMake(0.5, 0.5), withDelegate: self, atPlacemark: nil, withDeviceId: String(UIDevice.currentDevice().identifierForVendor))
+        query?.start()
+        infoText.text = "querying..."
     }
 
+    func cloudSightQueryDidFinishIdentifying(query: CloudSightQuery!) {
+        infoText.text = "\(query.skipReason): \(query.title)"
+    }
+    func cloudSightQueryDidFinishUploading(query: CloudSightQuery!) {
+        infoText.text = "Finish uploading"
+    }
+    
+    func cloudSightQueryDidFail(query: CloudSightQuery!, withError error: NSError!) {
+        infoText.text = "Query failed"
+    }
 }
 

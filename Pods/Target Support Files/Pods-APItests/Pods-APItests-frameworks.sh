@@ -86,10 +86,18 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-APItests/AFNetworking.framework"
   install_framework "Pods-APItests/BDBOAuth1Manager.framework"
+  install_framework "Pods-APItests/BFOAuth.framework"
+  install_framework "Pods-APItests/CloudSight.framework"
   install_framework "Pods-APItests/ELCodable.framework"
+  install_framework "Pods-APItests/RequestUtils.framework"
+  install_framework "Pods-APItests/UIImage_Categories.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-APItests/AFNetworking.framework"
   install_framework "Pods-APItests/BDBOAuth1Manager.framework"
+  install_framework "Pods-APItests/BFOAuth.framework"
+  install_framework "Pods-APItests/CloudSight.framework"
   install_framework "Pods-APItests/ELCodable.framework"
+  install_framework "Pods-APItests/RequestUtils.framework"
+  install_framework "Pods-APItests/UIImage_Categories.framework"
 fi

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '64B7DF3A15F0ABC74AF8D072'
+               BlueprintIdentifier = '4667FF5CAF1F037236B07525'
                BlueprintName = 'ELCodable'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ELCodable.framework'>

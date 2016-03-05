@@ -7,5 +7,7 @@ target 'APItests' do
 pod 'AFNetworking'
 pod 'ELCodable' , :git => 'https://github.com/aoriani/ELCodable.git', :commit => 'a5ae19f7cabb0b078fd47e0e969077711e13f12d'
 pod 'BDBOAuth1Manager'
+pod "CloudSight"
+pod "UIImage-Categories"
 end
 

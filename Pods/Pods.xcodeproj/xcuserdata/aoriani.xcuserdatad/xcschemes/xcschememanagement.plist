@@ -14,12 +14,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BFOAuth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CloudSight.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ELCodable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-APItests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RequestUtils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIImage-Categories.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,12 +57,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>35B9A0EB876F770C1335CDBCEC52AC22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>445B3D47256376A8FB06D383FDBEA0C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>717D3322EDD2A75674FAC60AAD06360D</key>
+		<key>57E417357BE6E0376CA5452F792CF58B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97FA5C4CEEE87038F3888358785E1F13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD7BE298D97FA19CB24EF04C51C38539</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC9717867E2C35753970EF386FB6E204</key>
 		<dict>
 			<key>primary</key>
 			<true/>

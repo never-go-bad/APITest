@@ -25,6 +25,10 @@
                                     <constraint firstAttribute="height" constant="222" id="7Xu-Zw-542"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX0-Wd-oRJ">
+                                <rect key="frame" x="23" y="306" width="120" height="120"/>
+                                <state key="normal" image="barcode"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-m6-Gkk">
                                 <rect key="frame" x="177" y="306" width="120" height="120"/>
                                 <state key="normal" image="camera"/>
@@ -32,23 +36,30 @@
                                     <action selector="onCameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYN-HD-XIx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX0-Wd-oRJ">
-                                <rect key="frame" x="23" y="306" width="120" height="120"/>
-                                <state key="normal" image="barcode"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-Fy-LV0">
+                                <rect key="frame" x="23" y="270" width="274" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="76Z-m6-Gkk" firstAttribute="trailing" secondItem="dr8-LK-XRa" secondAttribute="trailing" id="2Wm-mR-Oap"/>
                             <constraint firstItem="nX0-Wd-oRJ" firstAttribute="leading" secondItem="dr8-LK-XRa" secondAttribute="leading" id="APS-0P-WzN"/>
+                            <constraint firstItem="dO6-Fy-LV0" firstAttribute="top" secondItem="dr8-LK-XRa" secondAttribute="bottom" constant="20" id="Hg5-Oe-EAa"/>
                             <constraint firstItem="dr8-LK-XRa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QNl-cK-afv"/>
+                            <constraint firstItem="nX0-Wd-oRJ" firstAttribute="top" secondItem="dO6-Fy-LV0" secondAttribute="bottom" constant="15" id="Rhn-jD-yW5"/>
+                            <constraint firstItem="dO6-Fy-LV0" firstAttribute="trailing" secondItem="dr8-LK-XRa" secondAttribute="trailing" id="hLK-eF-zWH"/>
                             <constraint firstItem="nX0-Wd-oRJ" firstAttribute="centerY" secondItem="76Z-m6-Gkk" secondAttribute="centerY" id="sPW-f6-fzH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nX0-Wd-oRJ" secondAttribute="bottom" constant="54" id="sgC-cX-vhm"/>
+                            <constraint firstItem="dO6-Fy-LV0" firstAttribute="leading" secondItem="dr8-LK-XRa" secondAttribute="leading" id="wax-oV-n2I"/>
                             <constraint firstItem="dr8-LK-XRa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yeF-ek-gpS"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="infoText" destination="dO6-Fy-LV0" id="Nhy-PG-GHK"/>
                         <outlet property="pictureImageView" destination="dr8-LK-XRa" id="BJr-KO-LJG"/>
                     </connections>
                 </viewController>
