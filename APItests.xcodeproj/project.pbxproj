@@ -82,16 +82,24 @@
 		99959F0D1C86C3F60005157B /* APItests */ = {
 			isa = PBXGroup;
 			children = (
+				99FA28501C8AC6A4003AB2D4 /* BarcodeService */,
 				99959F0E1C86C3F60005157B /* AppDelegate.swift */,
 				99959F101C86C3F60005157B /* ViewController.swift */,
 				99959F121C86C3F60005157B /* Main.storyboard */,
 				99959F151C86C3F60005157B /* Assets.xcassets */,
 				99959F171C86C3F60005157B /* LaunchScreen.storyboard */,
 				99959F1A1C86C3F60005157B /* Info.plist */,
+			);
+			path = APItests;
+			sourceTree = "<group>";
+		};
+		99FA28501C8AC6A4003AB2D4 /* BarcodeService */ = {
+			isa = PBXGroup;
+			children = (
 				99959F201C86C6390005157B /* BarcodeService.swift */,
 				99959F221C86CF7F0005157B /* BarcodeResult.swift */,
 			);
-			path = APItests;
+			name = BarcodeService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

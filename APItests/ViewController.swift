@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var pictureImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         BarcodeService.sharedInstance.getByUPC("071921008291", onSuccess: {
-            (result) in /*print(result)*/
+            (result) in print(result)
             }, onError:  {})
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
@@ -40,14 +41,24 @@ class ViewController: UIViewController {
         localNotif.fireDate = NSDate(timeIntervalSinceNow: 5*60)
         localNotif.soundName = UILocalNotificationDefaultSoundName
         UIApplication.sharedApplication().scheduleLocalNotification(localNotif)
-        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timeout", userInfo: nil, repeats: false)
     }
     
     
-    func timeout() {
-        exit(0)
+    @IBAction func onCameraPressed(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .Camera
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
     }
 
+    func imagePickerController(picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        pictureImageView.image = image
+            picker.dismissViewControllerAnimated(true, completion:nil)
+    }
 
 }
 
