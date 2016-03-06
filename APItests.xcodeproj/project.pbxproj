@@ -14,6 +14,8 @@
 		99959F191C86C3F60005157B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99959F171C86C3F60005157B /* LaunchScreen.storyboard */; };
 		99959F211C86C6390005157B /* BarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99959F201C86C6390005157B /* BarcodeService.swift */; };
 		99959F231C86CF7F0005157B /* BarcodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99959F221C86CF7F0005157B /* BarcodeResult.swift */; };
+		99FA28531C8B9E6C003AB2D4 /* BarcodeDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA28521C8B9E6C003AB2D4 /* BarcodeDetectorViewController.swift */; };
+		99FA28551C8BA724003AB2D4 /* BarcodeDetector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FA28541C8BA724003AB2D4 /* BarcodeDetector.storyboard */; };
 		E84809A764D6E068FD264F21 /* Pods_APItests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BECAECFE4F94F287E24070 /* Pods_APItests.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		99959F1A1C86C3F60005157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99959F201C86C6390005157B /* BarcodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeService.swift; sourceTree = "<group>"; };
 		99959F221C86CF7F0005157B /* BarcodeResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeResult.swift; sourceTree = "<group>"; };
+		99FA28521C8B9E6C003AB2D4 /* BarcodeDetectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeDetectorViewController.swift; sourceTree = "<group>"; };
+		99FA28541C8BA724003AB2D4 /* BarcodeDetector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BarcodeDetector.storyboard; path = ../BarcodeDetector.storyboard; sourceTree = "<group>"; };
 		EC39A0D763FFB28DE30A0941 /* Pods-APItests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APItests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APItests/Pods-APItests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,7 @@
 		99959F0D1C86C3F60005157B /* APItests */ = {
 			isa = PBXGroup;
 			children = (
+				99FA28511C8B95B4003AB2D4 /* BarcodeController */,
 				99FA28501C8AC6A4003AB2D4 /* BarcodeService */,
 				99959F0E1C86C3F60005157B /* AppDelegate.swift */,
 				99959F101C86C3F60005157B /* ViewController.swift */,
@@ -100,6 +105,15 @@
 				99959F221C86CF7F0005157B /* BarcodeResult.swift */,
 			);
 			name = BarcodeService;
+			sourceTree = "<group>";
+		};
+		99FA28511C8B95B4003AB2D4 /* BarcodeController */ = {
+			isa = PBXGroup;
+			children = (
+				99FA28541C8BA724003AB2D4 /* BarcodeDetector.storyboard */,
+				99FA28521C8B9E6C003AB2D4 /* BarcodeDetectorViewController.swift */,
+			);
+			name = BarcodeController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +181,7 @@
 				99959F191C86C3F60005157B /* LaunchScreen.storyboard in Resources */,
 				99959F161C86C3F60005157B /* Assets.xcassets in Resources */,
 				99959F141C86C3F60005157B /* Main.storyboard in Resources */,
+				99FA28551C8BA724003AB2D4 /* BarcodeDetector.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 			files = (
 				99959F111C86C3F60005157B /* ViewController.swift in Sources */,
 				99959F231C86CF7F0005157B /* BarcodeResult.swift in Sources */,
+				99FA28531C8B9E6C003AB2D4 /* BarcodeDetectorViewController.swift in Sources */,
 				99959F211C86C6390005157B /* BarcodeService.swift in Sources */,
 				99959F0F1C86C3F60005157B /* AppDelegate.swift in Sources */,
 			);

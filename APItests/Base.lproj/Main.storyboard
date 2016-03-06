@@ -28,6 +28,9 @@
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX0-Wd-oRJ">
                                 <rect key="frame" x="23" y="306" width="120" height="120"/>
                                 <state key="normal" image="barcode"/>
+                                <connections>
+                                    <action selector="onBarcodePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Egz-ef-Ils"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-m6-Gkk">
                                 <rect key="frame" x="177" y="306" width="120" height="120"/>

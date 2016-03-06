@@ -9,8 +9,9 @@
 import UIKit
 import CloudSight
 import UIImage_Categories
+import AFNetworking
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CloudSightQueryDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CloudSightQueryDelegate, BarcodeDelegate {
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var infoText: UILabel!
     var query: CloudSightQuery?
@@ -51,6 +52,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIApplication.sharedApplication().scheduleLocalNotification(localNotif)
     }
     
+    @IBAction func onBarcodePressed(sender: AnyObject) {
+        let storyBoard = UIStoryboard(name: "BarcodeDetector", bundle: nil)
+        let barcodePresenter = storyBoard.instantiateViewControllerWithIdentifier(BarcodeDetectorViewController.storyBoardId) as! BarcodeDetectorViewController
+        barcodePresenter.delegate = self
+        presentViewController(barcodePresenter, animated: true, completion: nil)
+    }
+    
+    func barcodeController(onBarcodeDetected: String) {
+        BarcodeService.sharedInstance.getByUPC(onBarcodeDetected, onSuccess: {
+                barcodeResult in
+                    self.infoText.text = barcodeResult.response.data[0].product_name
+                    self.pictureImageView.setImageWithURL(NSURL(string: barcodeResult.response.data[0].image_urls![0])!)
+            }, onError: {})
+    }
     
     @IBAction func onCameraPressed(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
