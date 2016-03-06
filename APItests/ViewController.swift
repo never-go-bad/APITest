@@ -18,13 +18,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        BarcodeService.sharedInstance.getByUPC("071921008291", onSuccess: {
-            (result) in print(result)
-            }, onError:  {})
+        
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        
         
         CloudSightConnection.sharedInstance().consumerKey = "zyLoq-b0FIdsivIIm8MtHg"
         CloudSightConnection.sharedInstance().consumerSecret = "aH4RFQLr5gqfcOQuKxtNhA"
@@ -61,9 +57,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func barcodeController(onBarcodeDetected: String) {
         BarcodeService.sharedInstance.getByUPC(onBarcodeDetected, onSuccess: {
-                barcodeResult in
-                    self.infoText.text = barcodeResult.response.data[0].product_name
-                    self.pictureImageView.setImageWithURL(NSURL(string: barcodeResult.response.data[0].image_urls![0])!)
+            barcodeResult in
+            if (barcodeResult.response.data.count > 0 ) {
+                self.infoText.text = barcodeResult.response.data[0].brand! + ":" + barcodeResult.response.data[0].product_name!
+                self.pictureImageView.setImageWithURL(NSURL(string: barcodeResult.response.data[0].image_urls![0])!)
+            }
             }, onError: {})
     }
     
@@ -94,14 +92,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func cloudSightQueryDidFinishIdentifying(query: CloudSightQuery!) {
-        infoText.text = "\(query.skipReason): \(query.title)"
-    }
-    func cloudSightQueryDidFinishUploading(query: CloudSightQuery!) {
-        infoText.text = "Finish uploading"
+        let desc = query.title
+        let matchedFood = matchFood(desc)
+        var info = "\(query.skipReason): \(query.title)"
+        if (matchedFood.count > 1) {
+            let photourl = matchedFood.first!.photoUrl
+            let foodName = matchedFood.first!.name
+            pictureImageView.setImageWithURL(NSURL(string: photourl)!)
+            info += "\nFirst Match: \(foodName)"
+        }
+        infoText.text = info
     }
     
     func cloudSightQueryDidFail(query: CloudSightQuery!, withError error: NSError!) {
         infoText.text = "Query failed"
     }
+    
 }
 
